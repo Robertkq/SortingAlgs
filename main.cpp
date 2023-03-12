@@ -92,23 +92,17 @@ int main()
         std::cout << nvec++ << ": " << std::chrono::duration_cast<std::chrono::microseconds>(end-begin).count() << " us ";
         std::cout << kq::is_sorted(vec.data(), vec.data() + vec.size()) << "\n";
     }
-    reset_all();
-    nvec = 0;
-    std::cout << "Something sort\n";
-    for(auto& vec : vecs)
+    std::cout << "Random Sort\n";
+    std::vector<int> random;
+    random.resize(10);
+    for(int i = 0; i < 10; ++i)
     {
-        auto begin = std::chrono::high_resolution_clock::now();
-        //kq::random_sort(vec.data(), vec.data() + vec.size());
-        auto end = std::chrono::high_resolution_clock::now();
-        std::cout << nvec++ << ": " << std::chrono::duration_cast<std::chrono::microseconds>(end-begin).count() << " us ";
-        std::cout << kq::is_sorted(vec.data(), vec.data() + vec.size()) << "\n";
+        random[i] = rand();
     }
-
-    std::vector<int> random = { 5, 4, 3, 2, 1, 6, 7 };
     auto begin = std::chrono::high_resolution_clock::now();
     kq::random_sort(random.data(), random.data() + random.size());
     auto end = std::chrono::high_resolution_clock::now();
-    std::cout << nvec++ << ": " << std::chrono::duration_cast<std::chrono::microseconds>(end-begin).count() << " us ";
+    std::cout << "$:" << std::chrono::duration_cast<std::chrono::microseconds>(end-begin).count() << " us ";
     std::cout << kq::is_sorted(random.data(), random.data() + random.size()) << "\n";
     
     return 0;
