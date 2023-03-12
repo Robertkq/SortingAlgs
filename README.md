@@ -1,16 +1,16 @@
 # SortingAlgs
 
---
+---
 
 This is a project for my university
 
---
+---
 
 ## Setup
 
 clone the repo and do `make run`
 
---
+---
 
 ## How the tests are ran
 
@@ -22,7 +22,7 @@ There are 4 different vectors of int with different sizes:
 
 They are generated with random values using rand() and  srand(time(0))
 
---
+---
 
 ## Results
 
@@ -59,3 +59,5 @@ Note: The Random Sort algorithm was supplied with a vector containing 10 random 
 
 
 A quick overview over the results, we can see that quicksort is the fastest in most cases, but is slower in worst cases on reverse sorted vectors compared to mergesort
+
+---
